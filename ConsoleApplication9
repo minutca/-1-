@@ -1,0 +1,31 @@
+#include <iostream>
+#include "goods.h"
+#include<Windows.h>
+using namespace std;
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    Goods a("Телефон", "2025-10-16", 12000, 5, "INV-001");
+    Goods b("Телефон", "2025-10-20", 12000, 3, "INV-001");
+
+    cout << "Товар A" << endl;
+    a.Display();
+
+    cout << "Товар B" << endl;
+    b.Display();
+
+    Goods c = a + b;
+    cout << "A + B (додавання кількості):" << endl;
+    c.Display();
+
+    Goods d = a - b;
+    cout << "A - B (віднімання кількості):" << endl;
+    d.Display();
+
+    cout << "A == B ? " << (a == b ? "Так" : "Ні") << endl;
+    cout << "A < B ? " << (a < b ? "Так" : "Ні") << endl;
+
+    return 0;
+}
